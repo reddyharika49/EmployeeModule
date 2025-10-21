@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './FamilyAddressInfoContainer.module.css';
 
 import FamilyAddressInfoFormLeft from '../../components/FamilyAddressInfoComponets/FamilyAddressInfoFormLeft';
-
-import FamilyAddressInfoFormRight from '../../components/FamilyAddressInfoComponets/FamilyAddressInfoFormRight';
 import GeneralInfoContainer from '../acoordian-container/GeneralInfoContainer';
 const FamilyAddressInfoContainer = () => {
   return (

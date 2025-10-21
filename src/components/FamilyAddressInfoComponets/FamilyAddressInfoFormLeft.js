@@ -8,8 +8,7 @@ const FamilyAddressInfoFormRight=()=>{
     return (
         <div className={styles.whole_medical_container}>
           <FamilyAddressInfoHeader/>
-        <MainInfo />
-          {/* <MedicalRecordDetails/> */}
+          <MainInfo />
         </div>
       )
 }

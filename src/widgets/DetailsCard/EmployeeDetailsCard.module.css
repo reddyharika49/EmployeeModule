@@ -14,32 +14,44 @@
     border: 1px solid rgba(236, 236, 236, 1);
     padding: 7px;
     background: #fff;
+    border-bottom: none;
   }
   
   .left_section {
     display: flex;
     gap: 5px;
+    align-items: center;
   }
-  .bus_icon {
+  .profile_icon {
     display: flex;
     align-items: center;
   }
-  .driver_details {
+  .emp_label {
+    color: #5a5a5a;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    text-transform:capitalize;
+  }
+  
+  .emp_name {
+    color: #262626;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    text-transform: capitalize;
+    margin: 2px 0px;
+  }
+  .emp_id{
     color: #5a5a5a;
     font-size: 11px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-transform: capitalize;
-  }
-  
-  .driver_name {
-    color: #262626;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: capitalize;
+
   }
   
   .right_section {
@@ -51,13 +63,14 @@
   .blue_divider {
     display: flex;
     width: 100%;
-    padding-bottom: 2px;
+    padding: 2px;
     justify-content: center;
     align-items: center;
     gap: 2px;
     border-radius: 0px 0px 10px 10px;
     border: 1px solid #e2e2e2;
-    background: #3425ff;
+    border-top: none;
+    /* background: #3425ff; */
   }
   
   .divider_text {
@@ -65,5 +78,5 @@
     font-size: 10px;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: 100%;
   }

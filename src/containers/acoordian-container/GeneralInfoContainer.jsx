@@ -19,18 +19,20 @@ const GeneralInfoContainer = () => {
       </figure>
 
       <div className={styles.accordians}>
+      <FamilyDetails
+          expanded={expanded === "familyDetails"}
+          onChange={(e, isOpen) => setExpanded(isOpen ? "familyDetails" : null)}
+        />
+    
         <FamilyMembersInOrganization
           expanded={expanded === "lastvisited"}
           onChange={(e, isOpen) => setExpanded(isOpen ? "lastvisited" : null)}
         />
-        <ReferenceDetails
+          <ReferenceDetails
           expanded={expanded === "previousrecord"}
           onChange={(e, isOpen) => setExpanded(isOpen ? "previousrecord" : null)}
         />
-        <FamilyDetails
-          expanded={expanded === "familyDetails"}
-          onChange={(e, isOpen) => setExpanded(isOpen ? "familyDetails" : null)}
-        />
+       
       </div>
       <figure className={styles.bottom_decoration}>
         <img src={bottomdecoration} alt="Bottom Decoration" />

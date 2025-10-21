@@ -8,10 +8,12 @@ import {
   IconButton,
   Tooltip,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { ReactComponent as ExpandIcon } from "../../asserts/expandIcon.svg";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
-import PhoneIcon from "@mui/icons-material/Phone";
+
+import callIcon from "../../asserts/MainInfoCallIcon.svg";
 import styles from "./PermanentAddress.module.css"; // Using the CSS module
+import FolderIcon from "../../asserts/Folder.svg"
 
 const PermanentAddress = ({ expanded, onChange, addressData = {}, emergencyContact = {} }) => {
   const {
@@ -26,6 +28,7 @@ const PermanentAddress = ({ expanded, onChange, addressData = {}, emergencyConta
   const {
     contactName = "Kondreddi Vamsi Ramana",
     relationship = "Father",
+    phoneNumber = 9949522639
   } = emergencyContact;
 
   return (
@@ -33,21 +36,56 @@ const PermanentAddress = ({ expanded, onChange, addressData = {}, emergencyConta
       <Accordion
         expanded={expanded}
         onChange={onChange}
-        className={styles.accordionRoot}
+        // className={styles.accordionRoot}
+        sx={{
+          "& .MuiAccordionDetails-root ": { padding: "0px 16px 16px" },
+          "&&": {
+            "--Paper-shadow": "none",
+            boxShadow: "none",
+            borderRadius: "10px",
+            border: "1px solid #E6E4F0",
+            background: "rgba(255, 255, 255, 0.40)",
+            backdropFilter: "blur(9.1px)",
+          },
+          "&::before": { display: "none" },
+          "& .MuiButtonBase-root": {
+            alignItems: "start",
+            padding: "15px 18px",
+            minHeight: "unset",
+          },
+          "&.Mui-expanded": {
+            borderRadius: "10px",
+            border: "1px solid #B4BCFF",
+            background: "rgba(255, 255, 255, 0.30)",
+            boxShadow:
+              "0 8px 16px 0 rgba(0, 0, 0, 0.14), 0 0 2px 0 rgba(0, 0, 0, 0.12)",
+            backdropFilter: "blur(9.1px)",
+            margin: "0px",
+          },
+
+        }}
       >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandIcon />}
           aria-controls="present-content"
           id="present-header"
           className={styles.accordionSummary} // This class is now controlled by the logic in the CSS
         >
           <Typography component="span">
-            <Box className={styles.headerBox}>
+            {/* <Box className={styles.headerBox}>
               <RemoveCircleOutlineIcon className={styles.headerIcon} />
               <Typography variant="h6" className={styles.headerTitle}>
-                Permanent Address
+                Present Address
               </Typography>
-            </Box>
+            </Box> */}
+            <figure className={styles.header_figure}>
+              <div className={styles.header_left}>
+                <img src={FolderIcon} alt="accordion icon" />
+                <p className={styles.header_text}>
+                  Permanent Address
+                </p>
+              </div>
+            </figure>
           </Typography>
         </AccordionSummary>
 
@@ -107,11 +145,38 @@ const PermanentAddress = ({ expanded, onChange, addressData = {}, emergencyConta
                   <Typography variant="body1" className={styles.fieldValue}>
                     {contactName}
                   </Typography>
-                  <Tooltip title="Call Emergency Contact" arrow>
-                    <IconButton className={styles.phoneIcon} size="small">
-                      <PhoneIcon fontSize="inherit" />
-                    </IconButton>
+                  <Tooltip
+                    title={phoneNumber ? `${phoneNumber}` : "No number available"}
+                    arrow
+                    placement="top"
+                    componentsProps={{
+                      tooltip: {
+                        sx: {
+                          backgroundColor: "#3425FF",
+                          color: "#fff",
+                          fontSize: "0.75rem",
+                          fontWeight: 500,
+                          padding: "6px 10px",
+                          borderRadius: "6px",
+                          boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+                        },
+                      },
+                      arrow: {
+                        sx: {
+                          color: "#3425FF",
+                        },
+                      },
+                    }}
+                  >
+                    <figure style={{ cursor: phoneNumber ? "pointer" : "default" }}>
+                      <img
+                        src={callIcon}
+                        alt="Call"
+                      // onClick={() => phoneNumber && window.open(`tel:${phoneNumber}`)}
+                      />
+                    </figure>
                   </Tooltip>
+
                 </Box>
               </div>
               <div className={styles.infoItem} style={{ flexBasis: "33.33%" }}>
