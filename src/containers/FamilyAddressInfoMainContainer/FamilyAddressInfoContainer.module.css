@@ -1,0 +1,20 @@
+.family_address_info_container{
+
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px
+
+}
+.family_address_left_component{
+
+    width: 70%;
+    background-color: white;
+
+}
+.family_address_right_component{
+
+    width: 30%;
+    background-color: white;
+
+}

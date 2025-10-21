@@ -1,0 +1,144 @@
+/* Accordion root container styles */
+.accordionRoot {
+    box-shadow: none;
+    border-radius: 10px;
+    border: 1px solid #e6e4f0;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(9.1px);
+  }
+  
+  .accordionRoot::before {
+    display: none;
+  }
+  
+  .accordionRoot :global(.MuiAccordionDetails-root) {
+    padding: 0px 16px 16px;
+  }
+  
+  .accordionRoot :global(.MuiButtonBase-root) {
+    align-items: center; /* Center header items vertically */
+    padding: 15px 18px 15px 18px; /* Adjusted padding */
+    min-height: 50px;
+  }
+  
+  .accordionRoot:global(.Mui-expanded) {
+    border-radius: 10px;
+    border: 1px solid #b4bcff;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.14), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(9.1px);
+    margin: 0px;
+  }
+  
+  /* --- DIVIDER LINE LOGIC IS HERE --- */
+  
+  /* By default, the summary has NO line */
+  .accordionSummary {
+    border-bottom: none;
+  }
+  .accordionSummary :global(.MuiAccordionSummary-content) {
+    margin: 0px !important;
+  }
+  
+  /* Add the line ONLY when the accordion is expanded */
+  .accordionRoot:global(.Mui-expanded) .accordionSummary {
+    border-bottom: 1px solid #e6e4f0;
+  }
+  /* --- END DIVIDER LINE SECTION --- */
+  
+  
+  /* Header styles */
+  .headerBox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .headerIcon {
+    color: #555; /* Grey icon color */
+    font-size: 1.5rem;
+  }
+  
+  /* Title: "Present Address" */
+  .headerTitle {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #111 !important;
+  }
+  
+  /* --- Content Area --- */
+  
+  .detailsContainer {
+    /* Adds space between the header line and the content */
+    padding-top: 16px;
+  }
+  
+  /* For labels: "Name", "Pin", "Address" */
+  .fieldLabel {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: #555 !important; /* Grey color */
+    margin-bottom: 4px !important;
+  }
+  
+  /* For values: "Suresh Raina", "500081", "Hyderabad" */
+  .fieldValue {
+    font-size: 14px !important;
+    font-weight: 700 !important; /* Bold */
+    color: #000 !important; /* Black color */
+  }
+  
+  /* --- Layout Styles --- */
+  
+  /* A single row of info */
+  .infoRow {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping on large screens */
+    gap: 16px; /* Spacing between items */
+    margin-bottom: 24px; /* Spacing between rows */
+  }
+  
+  /* A single info block (label + value) */
+  .infoItem {
+    display: flex;
+    flex-direction: column;
+    /* Flex basis is set inline in the component */
+  }
+  
+  /* --- Emergency Contact Phone Icon --- */
+  
+  .contactContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .phoneIcon {
+    background-color: #2979ff; /* Solid blue background */
+    color: #ffffff; /* White icon */
+    border-radius: 50%; /* Circular */
+    width: 28px;
+    height: 28px;
+  }
+  
+  .phoneIcon :global(.MuiSvgIcon-root) {
+    font-size: 1rem; /* 16px icon */
+  }
+  
+  .phoneIcon:hover {
+    background-color: #0052cc; /* Darker blue on hover */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .infoRow {
+      flex-wrap: wrap; /* Allow wrapping on small screens */
+      margin-bottom: 8px;
+    }
+    
+    .infoItem {
+      /* Each item takes full width on small screens */
+      flex-basis: 100% !important; 
+      margin-bottom: 16px;
+    }
+  }

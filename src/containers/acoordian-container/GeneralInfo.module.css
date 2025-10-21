@@ -1,0 +1,25 @@
+.accordians {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.accordian_header_text {
+  color: #56555c;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.bottom_decoration {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* .bottom_decoration img {
+  width: 280px;  
+  height: 13px;
+} */
